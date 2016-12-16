@@ -1,0 +1,37 @@
+<head>
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body  ng-app="myApp">
+  <div ng-controller="oneController as vm">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Flicker Searcher</h1>
+          <form novalidate ng-submit="searchFlicker()">
+              <div class="form-group">
+                <input type="search" class="form-control" id="search" placeholder="search" ng-model="keyword" required="">
+                 <button type="submit" class="btn btn-default">Submit</button>
+              </div>
+          </form>
+          <div class="results" ng-if="showIt">
+            <div class="col-md-12">
+            <h2 ng-if="showText">We found results for {{keyword}} !</h2>
+            </div>
+            <div class="clearfix"></div>
+              <div ng-repeat="photo in results.photos.photo">
+                  <img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_b.jpg">
+                  <h3>{{photo.title}}</h3>
+            </div>
+          </div>
+        </div>
+     </div>
+    </div>
+  </div>
+ 
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+   <script src="https://code.angularjs.org/latest/angular-messages.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-animate.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="Ctrl.js"></script>
+</body>
