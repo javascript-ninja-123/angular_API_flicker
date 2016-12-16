@@ -7,16 +7,16 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1>Flicker Searcher</h1>
+          <h1 ng-class="{header:ActiveAnimation}">Flicker Searcher</h1>
           <form novalidate ng-submit="searchFlicker()">
               <div class="form-group">
                 <input type="search" class="form-control" id="search" placeholder="search" ng-model="keyword" required="">
-                 <button type="submit" class="btn btn-default">Submit</button>
+                 <button type="submit" class="btn btn-default" ng-click="ActiveAnimation=!ActiveAnimation">Submit</button>
               </div>
           </form>
           <div class="results" ng-if="showIt">
             <div class="col-md-12">
-            <h2 ng-if="showText">We found results for {{keyword}} !</h2>
+            <h2 ng-if="showText">{{saying}} {{keyword}} !</h2>
             </div>
             <div class="clearfix"></div>
               <div ng-repeat="photo in results.photos.photo">

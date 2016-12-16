@@ -44,3 +44,28 @@ img{
 	margin: 0 auto !important;
 	display:block;
 }
+.header{
+	transition:0.3s linear all;
+		opacity:0.8;
+		font-size:30px;
+	font-weight:900;
+	color:pink;
+}
+/*.header.ng-enter{
+	opacity:1;
+	transition:0.3 linear all;
+}
+.header.ng-enter.ng-enter-active{
+	opacity:0.3;
+	font-weight:900;
+	color:black;
+}
+.header.ng-leave{
+	transition:0.3s linear all;
+	opacity:0;
+	font-weight:900;
+	color:black;
+}
+.header.ng-leave.ng-leave-active{
+	opacity:1;
+}*/
